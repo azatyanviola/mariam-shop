@@ -1,0 +1,132 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="cart-items"></div>
+<div id="total-price"></div>
+
+<script>
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const cartContainer = document.getElementById('cart-items');
+  const totalPriceContainer = document.getElementById('total-price');
+  let total = 0;
+
+  cart.forEach(item => {
+    const div = document.createElement('div');
+    div.textContent = `${item.name} — ${item.price} դր․`;
+    cartContainer.appendChild(div);
+    total += item.price;
+  });
+
+  totalPriceContainer.textContent = `Ընդհանուր արժեք՝ ${total} դր․`;
+</script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+  <meta charset="UTF-8">
+  <title>Զամբյուղ</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #fff0f5;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #d63384;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #ffe6f0;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .cart-item button {
+      background-color: #ff4d6d;
+      color: white;
+      border: none;
+      padding: 5px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .cart-item button:hover {
+      background-color: #ff1a4f;
+    }
+
+    #total-price {
+      font-size: 1.2rem;
+      text-align: right;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .empty {
+      text-align: center;
+      margin-top: 50px;
+      color: #888;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <h1>Զամբյուղ</h1>
+  <div id="cart-items"></div>
+  <div id="total-price"></div>
+
+  <script>
+    function renderCart() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartContainer = document.getElementById('cart-items');
+      const totalPriceContainer = document.getElementById('total-price');
+      cartContainer.innerHTML = '';
+      let total = 0;
+
+      if (cart.length === 0) {
+        cartContainer.innerHTML = '<p class="empty">Զամբյուղը դատարկ է։</p>';
+        totalPriceContainer.textContent = '';
+        return;
+      }
+
+      cart.forEach((item, index) => {
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `
+          <span>${item.name} — ${item.price} դր․</span>
+          <button onclick="removeFromCart(${index})">Հեռացնել</button>
+        `;
+        cartContainer.appendChild(div);
+        total += item.price;
+      });
+
+      totalPriceContainer.textContent = `Ընդհանուր արժեք՝ ${total} դր․`;
+    }
+
+    function removeFromCart(index) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.splice(index, 1); // հեռացնում ենք նշված ինդեքսով
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart(); // վերագրանցում ենք
+    }
+
+    renderCart(); // էջի բեռնելուն պես գործարկվում է
+  </script>
+</body>
+</html>

@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MG Fashion Shop</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- <header class="header">
+    <div class="logo">MG</div>
+    <div class="cart">Զամբյուղ 🛒 (<span id="cart-count">0</span>)</div>
+  </header> -->
+
+  
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Որոնել MG..." />
+  </div>
+
+  <div class="categories">
+    <div class="category" onclick="filterCategory('all')">Բոլորը</div>
+    <div class="category" onclick="filterCategory('զգեստ')">Զգեստներ</div>
+    <div class="category" onclick="filterCategory('շապիկ')">Վերնաշապիկներ</div>
+    <div class="category" onclick="filterCategory('Տաբատներ')">Տաբատներ</div>
+    <div class="category" onclick="filterCategory('Կոշիկներ')">Կոշիկներ</div>
+    <div class="category" onclick="filterCategory('Զարդեր')">Զարդեր</div>
+    <div class="category" onclick="filterCategory('Փափուկ խաղալիքներ')">Փափուկ խաղալիքներ</div>
+    <div class="category" onclick="goToCart()">Զամբյուղ 🛒 (<span id="cart-count">0</span>)</div>
+  </div>
+
+  <main class="product-list" id="productList">
+    <div class="product" data-category="զգեստ">
+      <img src="https://i.pinimg.com/736x/91/6e/86/916e86bac1bdcf7cb29066c29e37139f.jpg" alt="Վարդագույն զգեստ" />
+      <h3>Վարդագույն զգեստ</h3>
+      <p>Չափս: XS S M L</p>
+      <p>Գին: 7500 դրամ</p>
+      <!-- <button onclick="addToCart('Վարդագույն զգեստ')">Ավելացնել զամբյուղին</button> -->
+      <button class="add-to-cart" data-name="զգեստ" data-price="7500">Ավելացնել զամբյուղ</button>
+
+    </div>
+  
+    <div class="product" data-category="զգեստ">
+      <img src="https://i.pinimg.com/474x/50/c6/23/50c6233c73a0429dda90878921f7fa90.jpg" alt="Սպիտակ էլեգանտ զգեստ" />
+      <h3>Սպիտակ զգեստ</h3>
+      <p>Չափս: XS S M L XL</p>
+      <p>Գին: 8600 դրամ</p>
+      <button class="add-to-cart" data-name="զգեստ" data-price="8600">Ավելացնել զամբյուղ</button>
+    </div>
+  
+    <div class="product" data-category="զգեստ">
+      <img src="https://ae03.alicdn.com/kf/S99c853c3d8f048268b79a94270286e775.jpg_640x640q90.jpg" alt="Սև զգեստ" />
+      <h3>Սև զգեստ</h3>
+      <p>Չափս: XS S M L</p>
+      <p>Գին: 6400 դրամ</p>
+      
+      <button class="add-to-cart" data-name="զգեստ" data-price="6400">Ավելացնել զամբյուղ</button>
+    </div>
+
+    <div class="product" data-category="զգեստ">
+      <img src="https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/39/8757942/1.jpg?2643" alt="Սև զգեստ" />
+      <h3>Կապույտ զգեստ</h3>
+      <p>Չափս: XS S M L</p>
+      <p>Գին: 5900 դրամ</p>
+      <button class="add-to-cart" data-name="զգեստ" data-price="5900">Ավելացնել զամբյուղ</button>
+    </div>
+
+    <div class="product" data-category="զգեստ">
+      <img src="https://down-ph.img.susercontent.com/file/6067565f8a23881ca488191308b80652" alt="Սև զգեստ" />
+      <h3>Սպիտակ զգեստ</h3>
+      <p>Չափս: XS S M L</p>
+      <p>Գին: 5500 դրամ</p>
+      <button class="add-to-cart" data-name="զգեստ" data-price="5500">Ավելացնել զամբյուղ</button>
+    </div>
+  </main>
+  
+  <main class="product-list" id="productList">
+    <div class="product" data-category="Վերնաշապիկներ">
+      <img src="https://my-test-11.slatic.net/p/cb1681c8c630d6e3dcdf40aa6616c68a.jpg" alt="2կտորից վերնաշապիկ" />
+      <h3>2կտորից վերնաշապիկ</h3>
+      <p>Չափս: XS S M L XL 2XL</p>
+      <p>Գին: 6800 դրամ</p>
+      <button class="add-to-cart" data-name="Վերնաշապիկներ" data-price="6800">Ավելացնել զամբյուղ</button>
+    </div>
+  
+    <div class="product" data-category="Վերնաշապիկներ">
+      <img src="https://ae01.alicdn.com/kf/Hbcaef4c6fb064424a5e85a47cdf9691bo.jpg" alt="Սպիտակ վերնաշապիկ" />
+      <h3>Սպիտակ վերնաշապիկ</h3>
+      <p>Չափս: XS S M L XL</p>
+      <p>Գին: 5800 դրամ</p>
+      <button class="add-to-cart" data-name="Վերնաշապիկներ" data-price="5800">Ավելացնել զամբյուղ</button>
+    </div>
+  
+    <div class="product" data-category="Վերնաշապիկներ">
+      <img src="https://ae01.alicdn.com/kf/S30bfe1053e0d421a861a0cf213780ddd1.jpg_640x640Q90.jpg_.webp" alt="Մանուշակագույն վերնաշապիկ" />
+      <h3>Մանուշակագույն վերնաշապիկ</h3>
+      <p>Չափս: XS S M L 2XL 3XL</p>
+      <p>Գին: 6200 դրամ</p>
+      <button class="add-to-cart" data-name="Վերնաշապիկներ" data-price="6200">Ավելացնել զամբյուղ</button>
+    </div>
+
+    <div class="product" data-category="Վերնաշապիկներ">
+      <img src="https://images.meesho.com/images/products/471506506/o858e_512.webp" alt="Մանուշակագույն վերնաշապիկ" />
+      <h3>Վարդագույն վերնաշապիկ</h3>
+      <p>Չափս: XS S M L 2XL </p>
+      <p>Գին: 7000 դրամ</p>
+      <button class="add-to-cart" data-name="Վերնաշապիկներ" data-price="7000">Ավելացնել զամբյուղ</button>
+    </div>
+
+    <div class="product" data-category="Վերնաշապիկներ">
+      <img src="https://images.meesho.com/images/products/418561782/yqqmd_512.webp" alt="Մանուշակագույն վերնաշապիկ" />
+      <h3>Սև վերնաշապիկ</h3>
+      <p>Չափս:S M L 2XL </p>
+      <p>Գին: 4800 դրամ</p>
+      <button class="add-to-cart" data-name="Վերնաշապիկներ" data-price="4800">Ավելացնել զամբյուղ</button>
+    </div>
+  </main>
+
+
+  <main class="product-list" id="productList">
+    <div class="product" data-category="Տաբատներ">
+      <img src="https://img.joomcdn.net/b0da8642f139175359a42bbea833f2604e0ea6b7_original.jpeg" alt="Կապույտ տաբատ" />
+      <h3>Կապույտ տաբատ</h3>
+      <p>Չափս: XS S M </p>
+      <p>Գին: 9200 դրամ</p>
+      <button class="add-to-cart" data-name="Տաբատներ" data-price="9200">Ավելացնել զամբյուղ</button>
+    </div>
+
+    <div class="product" data-category="Տաբատներ">
+        <img src="https://images.meesho.com/images/products/375773046/rtllv_512.webp" alt="Սև տաբատ" />
+        <h3>Սև տաբատ</h3>
+        <p>Չափս: XS S M L XL</p>
+        <p>Գին: 8700 դրամ</p>
+        <button class="add-to-cart" data-name="Տաբատներ" data-price="8700">Ավելացնել զամբյուղ</button>
+      </div>
+  
+      <div class="product" data-category="Տաբատներ">
+        <img src="https://m.media-amazon.com/images/I/71TMOlxcufL._AC_UF894,1000_QL80_.jpg" alt="Կապույտ տաբատ" />
+        <h3>Կապույտ տաբատ</h3>
+        <p>Չափս: XS S M L</p>
+        <p>Գին: 10500 դրամ</p>
+        <button class="add-to-cart" data-name="Տաբատներ" data-price="10500">Ավելացնել զամբյուղ</button>
+      </div>
+
+      
+      <div class="product" data-category="Տաբատներ">
+        <img src="https://offduty.in/cdn/shop/products/fb3fae5e8f3770051b1466cffe93d6af_1080x.jpg?v=1721927302" alt="Կապույտ տաբատ" />
+        <h3>Շագանակագույն տաբատ</h3>
+        <p>Չափս: XS S M L</p>
+        <p>Գին: 5500 դրամ</p>
+        <button class="add-to-cart" data-name="Տաբատներ" data-price="5500">Ավելացնել զամբյուղ</button>
+      </div>
+
+      
+      <div class="product" data-category="Տաբատներ">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT23URp1FWsoTkSRrK0NgI5rcN50kPoRxJrQtmbCrSJ6LMHIasppTWdj5FpyxARwT3RqjA&usqp=CAU" alt="Կապույտ տաբատ" />
+        <h3>Կապույտ տաբատ</h3>
+        <p>Չափս: XS S M L</p>
+        <p>Գին: 10500 դրամ</p>
+        <button class="add-to-cart" data-name="Տաբատներ" data-price="10500">Ավելացնել զամբյուղ</button>
+      </div>
+    </main> 
+
+
+    <main class="product-list" id="productList">
+      <div class="product" data-category="Կոշիկներ">
+        <img src="https://down-my.img.susercontent.com/file/00de019cf69ab3e31a13fd3fc6fe3592" alt="Սպորտային կոշիկ" />
+        <h3>Սպորտային կոշիկ</h3>
+        <p>Չափս: 38 39 40 41</p>
+        <p>Գին: 9400 դրամ</p>
+        <button class="add-to-cart" data-name="Կոշիկներ" data-price="9400">Ավելացնել զամբյուղ</button>
+      </div>
+
+      <div class="product" data-category="Կոշիկներ">
+        <img src="https://m.media-amazon.com/images/I/613EwvhOUML._AC_.jpg" alt="Սպորտային կոշիկ" />
+        <h3>Սպորտային կոշիկ</h3>
+        <p>Չափս: 35 36 37 38 39 40 41</p>
+        <p>Գին:10300 դրամ</p>
+        <button class="add-to-cart" data-name="Կոշիկներ" data-price="10300">Ավելացնել զամբյուղ</button>
+      </div>
+
+      <div class="product" data-category="Կոշիկներ">
+        <img src="https://ae01.alicdn.com/kf/Sad78a3a6d36b43658639bd3043dac7efg.jpg" alt="Սպորտային կոշիկ" />
+        <h3>Սպորտային կոշիկ</h3>
+        <p>Չափս: 37 38 39 40 41</p>
+        <p>Գին:12500 դրամ</p>
+        <button class="add-to-cart" data-name="Կոշիկներ" data-price="12500">Ավելացնել զամբյուղ</button>
+      </div>
+
+      <div class="product" data-category="Կոշիկներ">
+        <img src="https://d3thqe68ymbqps.cloudfront.net/3150774-home_default/2023-women-shoes-chunky-sneakers-breathable-ladies-sports-shoes-fashio.jpg" alt="Սպորտային կոշիկ" />
+        <h3>Սպորտային կոշիկ</h3>
+        <p>Չափս: 37 38 39 40 41</p>
+        <p>Գին:10500 դրամ</p>
+        <button class="add-to-cart" data-name="Կոշիկներ" data-price="10500">Ավելացնել զամբյուղ</button>
+      </div>
+
+      <div class="product" data-category="Կոշիկներ">
+        <img src="https://i.pinimg.com/736x/02/db/fe/02dbfe459ba81f6ed4a58777d3a6b7ae.jpg" alt="Սպորտային կոշիկ" />
+        <h3>Սպորտային կոշիկ</h3>
+        <p>Չափս: 38 39 40 41</p>
+        <p>Գին 8600 դրամ</p>
+        <button class="add-to-cart" data-name="Կոշիկներ" data-price="8600">Ավելացնել զամբյուղ</button>
+      </div>
+      </main> 
+
+
+
+
+      <main class="product-list" id="productList">
+        <div class="product" data-category="Զարդեր">
+          <img src="https://img.joomcdn.net/7451ab0117f98fb37ca5ba6a4062a44c17680d27_original.jpeg" alt="Զարդեր" />
+          <h3>Թևնոց</h3>
+          <p>Գին: 3200 դրամ</p>
+          <button class="add-to-cart" data-name="Զարդեր" data-price="3200">Ավելացնել զամբյուղ</button>
+        </div>
+
+        <div class="product" data-category="Զարդեր">
+          <img src="https://img.drz.lazcdn.com/static/bd/p/f4b072816820e84e2344fe21a43e5f10.jpg_960x960q80.jpg_.webp" alt="Զարդեր" />
+          <h3>Վզնոց</h3>
+          <p>Գին: 4600 դրամ</p>
+          <button class="add-to-cart" data-name="Զարդեր" data-price="4600">Ավելացնել զամբյուղ</button>
+        </div>
+
+        <div class="product" data-category="Զարդեր">
+          <img src="https://vembley.com/cdn/shop/products/1_4c5500b3-eebd-4fbc-a230-2ace94da6dee.jpg?v=1666068140" alt="Զարդեր" />
+          <h3>Ականջօղ</h3>
+          <p>Գին: 2900 դրամ</p>
+          <button class="add-to-cart" data-name="Զարդեր" data-price="2900">Ավելացնել զամբյուղ</button>
+        </div>
+
+        <div class="product" data-category="Զարդեր">
+          <img src="https://static-01.daraz.lk/p/ecd95f89af66d1e0eee4ee807c64d9fb.jpg" alt="Զարդեր" />
+          <h3>Մատանի</h3>
+          <p>Գին: 1800 դրամ</p>
+          <button class="add-to-cart" data-name="Զարդեր" data-price="1800">Ավելացնել զամբյուղ</button>
+        </div>
+
+        <div class="product" data-category="Զարդեր">
+          <img src="https://img.joomcdn.net/a3cd45d88f17088c728ced8acb72e511f721d0e5_original.jpeg" alt="Զարդեր" />
+          <h3>Վզնոց</h3>
+          <p>Գին: 2400 դրամ</p>
+          <button class="add-to-cart" data-name="Զարդեր" data-price="2400">Ավելացնել զամբյուղ</button>
+        </div>
+         </main> 
+
+
+         <main class="product-list" id="productList">
+          <div class="product" data-category="Փափուկ խաղալիքներ">
+            <img src="https://i.ebayimg.com/images/g/2qYAAOSwdHVjIk8g/s-l400.jpg" alt="Փափուկ խաղալիքներ" />
+            <h3>Նապաստակ</h3>
+            <p>Գին: 4700 դրամ</p>
+            <button class="add-to-cart" data-name="Փափուկ խաղալիքներ" data-price="4700">Ավելացնել զամբյուղ</button>
+          </div>
+
+
+          <div class="product" data-category="Փափուկ խաղալիքներ">
+            <img src="https://i5.walmartimages.com/seo/Disney-Baby-Stitch-Stuffed-Animal-Plush-15-Inches_66e9d92c-ff5d-4945-85d1-af8c4b46d146.8f0c4337aa65e91ed0400af4f5dca812.jpeg" alt="Փափուկ խաղալիքներ" />
+            <h3>Ստիչ</h3>
+            <p>Գին: 5300 դրամ</p>
+            <button class="add-to-cart" data-name="Փափուկ խաղալիքներ" data-price="5300">Ավելացնել զամբյուղ</button>
+          </div>
+
+
+          <div class="product" data-category="Փափուկ խաղալիքներ">
+            <img src="https://omgkawaii.com/cdn/shop/files/omgkawaii-cuddly-panda-pal-adorable-plush-panda-bear-toy-40754747834581.jpg" alt="Փափուկ խաղալիքներ" />
+            <h3>Պանդա</h3>
+            <p>Գին: 3800 դրամ</p>
+            <button class="add-to-cart" data-name="Փափուկ խաղալիքներ" data-price="3800">Ավելացնել զամբյուղ</button>
+          </div>
+
+          
+          <div class="product" data-category="Փափուկ խաղալիքներ">
+            <img src="https://5.imimg.com/data5/SELLER/Default/2024/5/422288389/HW/XT/QZ/87329053/cute-penguin-shape-plush-toy-25-cm-and-imported-fabric-500x500.jpg" alt="Փափուկ խաղալիքներ" />
+            <h3>Պինգվին</h3>
+            <p>Գին: 3600 դրամ</p>
+            <button class="add-to-cart" data-name="Փափուկ խաղալիքներ" data-price="3600">Ավելացնել զամբյուղ</button>
+          </div>
+
+          
+          <div class="product" data-category="Փափուկ խաղալիքներ">
+            <img src="https://ae01.alicdn.com/kf/S43941b094309494e91e839935ef0e536D.jpg" alt="Փափուկ խաղալիքներ" />
+            <h3>Ճուտիկ</h3>
+            <p>Գին:5300 դրամ</p>
+            <button class="add-to-cart" data-name="Փափուկ խաղալիքներ" data-price="5300">Ավելացնել զամբյուղ</button>
+          </div>
+  
+          
+           </main> 
+  
+      
+
+  <script src="script11.js"></script>
+</body>
+</html>
+
+
+
+
+
+
